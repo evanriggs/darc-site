@@ -51,30 +51,30 @@ export default function AboutPage() {
             <div className="darc-mode min-h-screen py-16">
                 <div className="container mx-auto px-4 max-w-6xl">
                     {/* Header */}
-                    <div className="mb-12 border-l-4 border-darc-red pl-6">
-                        <h1 className="text-5xl font-mono font-bold text-darc-red mb-4 chromatic" data-text="ABOUT DARC">
+                    <div className="mb-12 border-l-4 border-darc-green pl-6">
+                        <h1 className="text-5xl font-mono font-bold text-darc-green mb-4">
                             ABOUT DARC
                         </h1>
                         <div className="flex gap-4 text-xs">
-                            <span className="border border-darc-red text-darc-red px-3 py-1 font-mono">機密</span>
-                            <span className="border border-darc-cyan text-darc-cyan px-3 py-1 font-mono">CLASSIFIED</span>
+                            <span className="border border-darc-green text-darc-green px-3 py-1 font-mono">機密</span>
+                            <span className="border border-darc-green text-darc-green px-3 py-1 font-mono">CLASSIFIED</span>
                             <span className="border border-darc-green text-darc-green px-3 py-1 font-mono">警告</span>
                         </div>
                     </div>
 
                     {/* Intro Section */}
-                    <section className="bg-darc-black bg-opacity-50 border border-darc-red p-8 mb-12">
-                        <h2 className="text-2xl text-darc-red mb-4 font-bold font-mono">
+                    <section className="bg-darc-black bg-opacity-50 border border-darc-green p-8 mb-12">
+                        <h2 className="text-2xl text-darc-green mb-4 font-bold font-mono">
                             {'>> '} A NEW KIND OF DEFENSE THINK TANK
                         </h2>
-                        <p className="text-darc-green leading-relaxed mb-4 font-mono">
+                        <p className="text-white leading-relaxed mb-4 font-mono">
                             The Defense Analyses and Research Corporation (DARC) is a new kind of defense think tank.
                         </p>
-                        <p className="text-darc-green leading-relaxed mb-4 font-mono">
+                        <p className="text-white leading-relaxed mb-4 font-mono">
                             We are founded on the proposition that the present era requires bold defense thinking
                             that acknowledges hard truths and genuinely confronts the urgency of this moment.
                         </p>
-                        <p className="text-darc-green leading-relaxed font-mono">
+                        <p className="text-white leading-relaxed font-mono">
                             The future demands fresh and strange ideas, ones that offer answers to the deepest
                             questions that the sclerotic machinery of defense intellectualism is no longer able
                             to provide.
@@ -83,7 +83,7 @@ export default function AboutPage() {
 
                     {/* Authors Section */}
                     <section className="mb-12">
-                        <h2 className="text-3xl font-mono font-bold text-darc-cyan mb-8 border-l-4 border-darc-cyan pl-6">
+                        <h2 className="text-3xl font-mono font-bold text-darc-green mb-8 border-l-4 border-darc-green pl-6">
                             {'>> '} OUR TEAM
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,27 +92,27 @@ export default function AboutPage() {
                                     key={index}
                                     className={`border p-6 font-mono transition-all ${
                                         author.status === 'suspended'
-                                            ? 'border-darc-red bg-darc-black bg-opacity-30 opacity-60'
-                                            : 'border-darc-green bg-darc-black bg-opacity-50 hover:border-darc-cyan'
+                                            ? 'border-darc-green bg-darc-black bg-opacity-30 opacity-60'
+                                            : 'border-darc-green bg-darc-black bg-opacity-50 hover:border-white'
                                     }`}
                                 >
                                     <div className="flex items-start justify-between mb-3">
                                         <h3 className={`text-xl font-bold ${
-                                            author.status === 'suspended' ? 'text-darc-red line-through' : 'text-darc-red'
+                                            author.status === 'suspended' ? 'text-darc-green line-through opacity-50' : 'text-darc-green'
                                         }`}>
                                             {author.name}
                                         </h3>
                                         {author.status === 'suspended' && (
-                                            <span className="text-xs text-darc-red border border-darc-red px-2 py-1">
+                                            <span className="text-xs text-darc-green border border-darc-green px-2 py-1">
                                                 SUSPENDED
                                             </span>
                                         )}
                                     </div>
-                                    <p className="text-darc-cyan text-sm mb-3 font-semibold">
+                                    <p className="text-white text-sm mb-3 font-semibold">
                                         {author.title}
                                     </p>
                                     <p className={`text-sm leading-relaxed ${
-                                        author.status === 'suspended' ? 'text-darc-red opacity-50' : 'text-darc-green'
+                                        author.status === 'suspended' ? 'text-white opacity-50' : 'text-white'
                                     }`}>
                                         {author.bio}
                                     </p>
@@ -126,7 +126,7 @@ export default function AboutPage() {
                         <h2 className="text-2xl text-darc-green mb-4 font-bold font-mono">
                             {'>> '} LOCATIONS
                         </h2>
-                        <div className="space-y-2 text-darc-cyan font-mono">
+                        <div className="space-y-2 text-white font-mono">
                             <p>HEADQUARTERS: Arlington, VA</p>
                             <p>WEST COAST: El Segundo, CA</p>
                             <p>INTERNATIONAL: London, UK</p>
@@ -134,8 +134,8 @@ export default function AboutPage() {
                     </section>
 
                     {/* Follow Section */}
-                    <section className="border-l-4 border-darc-red pl-6 mb-12">
-                        <h2 className="text-2xl text-darc-red mb-4 font-bold font-mono">
+                    <section className="border-l-4 border-darc-green pl-6 mb-12">
+                        <h2 className="text-2xl text-darc-green mb-4 font-bold font-mono">
                             {'>> '} FOLLOW OUR WORK
                         </h2>
                         <div className="space-y-3 font-mono">
@@ -144,50 +144,47 @@ export default function AboutPage() {
                                     href="https://x.com/DefenseAnalyses"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-darc-cyan hover:text-darc-red glitch-effect"
-                                    data-text="@DefenseAnalyses"
+                                    className="text-darc-green hover:text-white"
                                 >
                                     @DefenseAnalyses
                                 </a>
-                                <span className="text-darc-green ml-3">// Twitter/X</span>
+                                <span className="text-white ml-3">// Twitter/X</span>
                             </p>
                             <p>
                                 <a
                                     href="https://defenseanalyses.substack.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-darc-cyan hover:text-darc-red glitch-effect"
-                                    data-text="defenseanalyses.substack.com"
+                                    className="text-darc-green hover:text-white"
                                 >
                                     defenseanalyses.substack.com
                                 </a>
-                                <span className="text-darc-green ml-3">// Newsletter</span>
+                                <span className="text-white ml-3">// Newsletter</span>
                             </p>
                             <p>
                                 <a
                                     href="https://defenseanalyses.org/publications/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-darc-cyan hover:text-darc-red glitch-effect"
-                                    data-text="Browse Publications"
+                                    className="text-darc-green hover:text-white"
                                 >
                                     Browse Publications
                                 </a>
-                                <span className="text-darc-green ml-3">// Full Archive</span>
+                                <span className="text-white ml-3">// Full Archive</span>
                             </p>
                         </div>
                     </section>
 
                     {/* Substack CTA */}
-                    <div className="mt-12 bg-darc-red bg-opacity-10 border-2 border-darc-red p-8 text-center">
-                        <p className="text-darc-red font-bold text-xl mb-4 font-mono">
+                    <div className="mt-12 bg-darc-green bg-opacity-10 border-2 border-darc-green p-8 text-center">
+                        <p className="text-darc-green font-bold text-xl mb-4 font-mono">
                             [SUBSCRIBE FOR UPDATES]
                         </p>
                         <a
                             href="https://defenseanalyses.substack.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-darc-red text-black px-8 py-3 font-bold font-mono hover:bg-darc-cyan hover:text-black transition-all text-lg"
+                            className="inline-block bg-darc-green text-black px-8 py-3 font-bold font-mono hover:bg-white hover:text-black transition-all text-lg"
                         >
                             READ MORE ON SUBSTACK &gt;&gt;
                         </a>

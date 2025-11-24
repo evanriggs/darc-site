@@ -16,11 +16,11 @@ const config: Config = {
           lightgray: '#e2e8f0',
           white: '#ffffff',
         },
-        // DARC mode colors
+        // DARC mode colors - Black & Green Hacker Theme
         darc: {
-          black: '#0a0a0a',
-          red: '#ff0000',
-          cyan: '#00ffff',
+          black: '#000000',
+          red: '#00ff41', // Using green instead of red
+          cyan: '#00ff41', // Using green instead of cyan
           green: '#00ff41',
           white: '#ffffff',
         },

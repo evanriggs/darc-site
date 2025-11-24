@@ -41,9 +41,9 @@ nav a:hover {
 }
 
 
-/* DARC Mode Global Styles */
+/* DARC Mode Global Styles - Black & Green Hacker Theme */
 .darc-mode {
-  background-color: #0a0a0a;
+  background-color: #000000;
   color: #00ff41;
   font-family: 'Courier New', monospace;
   position: relative;
@@ -58,8 +58,8 @@ nav a:hover {
   height: 100%;
   background:
     repeating-linear-gradient(0deg,
-      rgba(0, 0, 0, 0.15) 0px,
-      rgba(0, 0, 0, 0.15) 1px,
+      rgba(0, 255, 65, 0.03) 0px,
+      rgba(0, 255, 65, 0.03) 1px,
       transparent 1px,
       transparent 2px);
   pointer-events: none;
@@ -67,21 +67,30 @@ nav a:hover {
 }
 
 .darc-mode a {
-  color: #00ffff;
+  color: #00ff41;
   text-decoration: none;
   transition: all 0.2s;
 }
 
 .darc-mode a:hover {
-  color: #ff0000;
-  text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.8);
 }
 
-/* CRT Phosphor Glow */
+/* CRT Phosphor Glow - Green */
 .darc-mode h1,
 .darc-mode h2,
 .darc-mode h3 {
-  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+  color: #00ff41;
+}
+
+.darc-mode p {
+  color: #ffffff;
+}
+
+.darc-mode span {
+  color: #00ff41;
 }
 
 /* Glitch Effect */
@@ -179,16 +188,16 @@ nav a:hover {
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
-/* Warning Stripe */
+/* Warning Stripe - Green */
 .warning-stripe {
   background: repeating-linear-gradient(45deg,
-      #ff0000,
-      #ff0000 10px,
+      #00ff41,
+      #00ff41 10px,
       #000000 10px,
       #000000 20px);
 }
 
-/* Chromatic Aberration */
+/* Chromatic Aberration - Green */
 .chromatic {
   position: relative;
 }
@@ -204,16 +213,16 @@ nav a:hover {
 }
 
 .chromatic::before {
-  color: #ff0000;
-  transform: translate(-2px, 0);
-  opacity: 0.5;
+  color: #00ff41;
+  transform: translate(-1px, 0);
+  opacity: 0.3;
   mix-blend-mode: screen;
 }
 
 .chromatic::after {
-  color: #00ffff;
-  transform: translate(2px, 0);
-  opacity: 0.5;
+  color: #ffffff;
+  transform: translate(1px, 0);
+  opacity: 0.3;
   mix-blend-mode: screen;
 }
 

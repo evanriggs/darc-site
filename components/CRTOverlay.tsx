@@ -35,7 +35,7 @@ export function CRTOverlay() {
             {particles.map(particle => (
                 <div
                     key={particle.id}
-                    className="fixed pointer-events-none text-darc-red opacity-20 font-mono text-xs z-50"
+                    className="fixed pointer-events-none text-darc-green opacity-20 font-mono text-xs z-50"
                     style={{
                         left: `${particle.x}%`,
                         top: `${particle.y}%`,

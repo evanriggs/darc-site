@@ -18,14 +18,14 @@ export function Navigation() {
 
     if (isDarcMode) {
         return (
-            <nav className="border-b-2 border-darc-red bg-darc-black py-4 relative">
-                {/* Warning stripe */}
-                <div className="absolute top-0 left-0 w-full h-1 warning-stripe opacity-50"></div>
+            <nav className="border-b-2 border-darc-green bg-darc-black py-4 relative">
+                {/* Green accent stripe */}
+                <div className="absolute top-0 left-0 w-full h-1 warning-stripe opacity-30"></div>
 
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between">
                         <Link href="/" className="text-2xl font-bold font-mono tracking-wider">
-                            <span className="text-darc-red glitch-effect" data-text="D A R C">D A R C</span>
+                            <span className="text-darc-green">D A R C</span>
                         </Link>
 
                         <div className="flex gap-6 items-center">
@@ -38,7 +38,7 @@ export function Navigation() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`font-mono uppercase text-sm tracking-wider transition-all
-                            ${pathname === link.href ? 'text-darc-red' : 'text-darc-green hover:text-darc-cyan'}
+                            ${pathname === link.href ? 'text-darc-green' : 'text-white hover:text-darc-green'}
                           `}
                                         >
                                             {link.label}
@@ -50,7 +50,7 @@ export function Navigation() {
                                         key={link.href}
                                         href={link.href}
                                         className={`font-mono uppercase text-sm tracking-wider transition-all
-                        ${pathname === link.href ? 'text-darc-red' : 'text-darc-green hover:text-darc-cyan'}
+                        ${pathname === link.href ? 'text-darc-green' : 'text-white hover:text-darc-green'}
                       `}
                                     >
                                         {link.label}
@@ -61,11 +61,11 @@ export function Navigation() {
                                 href="https://defenseanalyses.substack.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-mono uppercase text-lg font-bold text-darc-red border-2 border-darc-red px-4 py-2 hover:bg-darc-red hover:text-black transition-all"
+                                className="font-mono uppercase text-lg font-bold text-darc-green border-2 border-darc-green px-4 py-2 hover:bg-darc-green hover:text-black transition-all"
                             >
-                                <span className="glitch-effect" data-text="SUBSTACK">SUBSTACK</span>
+                                SUBSTACK
                             </a>
-                            <div className="text-xs text-darc-red border border-darc-red px-2 py-1 font-mono">
+                            <div className="text-xs text-darc-green border border-darc-green px-2 py-1 font-mono">
                                 機密
                             </div>
                         </div>
