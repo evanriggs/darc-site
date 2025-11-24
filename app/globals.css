@@ -143,13 +143,13 @@ nav a:hover {
 
 .glitch-effect:hover::before {
   animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  color: #ff0000;
+  color: #00ff41;
   z-index: -1;
 }
 
 .glitch-effect:hover::after {
   animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
-  color: #00ffff;
+  color: #ffffff;
   z-index: -2;
 }
 
@@ -167,7 +167,7 @@ nav a:hover {
   height: 100%;
   background: linear-gradient(to bottom,
       transparent 0%,
-      rgba(255, 0, 0, 0.1) 50%,
+      rgba(0, 255, 65, 0.1) 50%,
       transparent 100%);
   animation: scanline 8s linear infinite;
   pointer-events: none;
