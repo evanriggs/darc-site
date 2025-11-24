@@ -46,9 +46,9 @@ export default function TeamPage() {
         <div className="min-h-screen bg-white py-16">
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
-                <div className="mb-12 border-l-4 border-darc-green pl-6 pb-6">
-                    <h1 className="text-5xl font-bold text-darc-green mb-4 tracking-tight">
-                        OUR TEAM
+                <div className="mb-12 border-b-2 border-gray-200 pb-6">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                        Our Team
                     </h1>
                     <p className="text-gray-600 text-lg">
                         Meet the analysts and contributors behind DARC
@@ -57,27 +57,27 @@ export default function TeamPage() {
 
                 {/* Authors Section */}
                 <section className="mb-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {authors.map((author, index) => (
                             <div
                                 key={index}
-                                className={`border-2 p-6 transition-all bg-white ${
+                                className={`border rounded-lg p-6 transition-shadow bg-white ${
                                     author.status === 'suspended'
-                                        ? 'border-red-400 bg-red-50 opacity-70'
-                                        : 'border-darc-green hover:border-darc-green hover:shadow-lg hover:shadow-darc-green/20'
+                                        ? 'border-red-300 bg-red-50 opacity-75'
+                                        : 'border-gray-200 hover:border-darc-green hover:shadow-md'
                                 }`}
                             >
                                 <div className="flex items-start justify-between mb-3">
                                     <h3 className={`text-xl font-bold ${
                                         author.status === 'suspended' 
-                                            ? 'text-red-600 line-through opacity-60' 
-                                            : 'text-darc-green'
+                                            ? 'text-gray-400 line-through' 
+                                            : 'text-gray-900'
                                     }`}>
                                         {author.name}
                                     </h3>
                                     {author.status === 'suspended' && (
-                                        <span className="text-xs text-white border border-red-500 bg-red-500 px-2 py-1 font-mono uppercase tracking-wider">
-                                            SUSPENDED
+                                        <span className="text-xs text-red-600 border border-red-300 px-2 py-1 rounded bg-red-50">
+                                            Suspended
                                         </span>
                                     )}
                                 </div>
