@@ -41,26 +41,6 @@ const authors: Author[] = [
         bio: 'Waingro\'s string of sensational exposés was cut short after a pattern of reckless, unverified claims and ethical violations surfaced. Once touted as a rising star, his volatility and penchant for sensationalism led to his permanent exclusion from the NR editorial masthead.',
         status: 'suspended',
     },
-    {
-        name: 'Charlene Shiherlis',
-        title: 'Features Editor, Spousal Support in the Service Community',
-        bio: 'Charlene curates profiles and personal essays about the lives and challenges of military and intelligence families. A sharp editor with an eye for domestic intricacies, she is respected by contributors—though sometimes struggles to balance the demands of the newsroom and home.',
-    },
-    {
-        name: 'Eady',
-        title: 'Culture Correspondent, Civilian Impact Desk',
-        bio: 'Eady covers civilian-military relations, focusing on the personal effects of policy and national security on everyday Americans. Drawn into the sector through a relationship with McCauley, she\'s recognized for her humane, accessible reporting on how geopolitics shapes personal destinies.',
-    },
-    {
-        name: 'Justine Hanna',
-        title: 'Staff Writer, Family Affairs & Mental Wellbeing',
-        bio: 'Justine explores the strain and consequences of national security work on family life. Her columns critique structural neglect of mental health resources for defense professionals\' families and are informed by her turbulent marriage to a work-obsessed federal agent.',
-    },
-    {
-        name: 'Donald Breedan',
-        title: 'Junior Fellow, Rehabilitation & Security Futures',
-        bio: 'A once-convicted, now-rehabilitated consultant, Breedan provides lived-experience insights into reentry initiatives for former offenders. His research focuses on the intersection of economic insecurity, recidivism, and homeland defense.',
-    },
 ];
 
 export default function AboutPage() {
