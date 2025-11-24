@@ -1,122 +1,116 @@
+'use client';
+
+interface Author {
+    name: string;
+    title: string;
+    bio: string;
+    status?: 'suspended' | 'active';
+}
+
+const authors: Author[] = [
+    {
+        name: 'Neil McCauley',
+        title: 'Senior Fellow, Strategic Deterrence & Irregular Warfare',
+        bio: 'A reserved, highly disciplined analyst, McCauley brings decades of experience in strategic risk assessment and counterterrorism. Known for his "no ties, no distractions" ethos, he is regarded for his measured, quietly rigorous policy briefs and deep dives into the psychology of transnational actors. He previously served as an independent contractor on covert assignments for unnamed federal entities.',
+    },
+    {
+        name: 'Vincent Hanna',
+        title: 'Opinion Columnist and Law Enforcement Contributor (Ret. Lt. Col.)',
+        bio: 'A tempestuous but brilliant commentator, Hanna is a veteran of the LAPD\'s Major Robbery Task Force and a vocal advocate of urban security reform. He writes with relentless energy on America\'s policing challenges and the overlap of criminal and extremist networks. His essays blend passion and insight, and he\'s infamous in editorial meetings for his dramatic outbursts and unwavering pursuit of "hard truths."',
+    },
+    {
+        name: 'Chris Shiherlis',
+        title: 'Defense Technology & Acquisition Staff Writer',
+        bio: 'Shiherlis specializes in the intersection of defense procurement and personal resilience. Once a military logistics officer who managed high-value contracts in volatile regions, Chris now investigates how human factors influence tech adoption in defense. Open about his past struggles and triumphs, he\'s known for his authenticity and fiercely loyal mentorship of younger correspondents.',
+    },
+    {
+        name: 'Michael Cheritto',
+        title: 'Columnist, Domestic Security & Civil Preparedness',
+        bio: 'Cheritto brings a blue-collar pragmatism to his writing, covering infrastructure protection and law enforcement training for homeland defense. A former National Guard sergeant, he is renowned for relatable stories and his advocacy for small-town emergency response reforms—though he\'s also been rumored to take risks to break a story.',
+    },
+    {
+        name: 'Trejo',
+        title: 'Contributing Editor, Counter-Cartel Operations',
+        bio: 'Low-key and ultra-reliable, Trejo is the NR team\'s backbone for Latin American organized crime analysis. With years spent undercover with federal agencies, his grounded, detail-oriented intelligence work has busted numerous mythologies about the border. Avoids the limelight but is a trusted source for reporters facing tight deadlines.',
+    },
+    {
+        name: 'Waingro',
+        title: 'Freelance Reporter (Suspended)',
+        bio: 'Waingro\'s string of sensational exposés was cut short after a pattern of reckless, unverified claims and ethical violations surfaced. Once touted as a rising star, his volatility and penchant for sensationalism led to his permanent exclusion from the NR editorial masthead.',
+        status: 'suspended',
+    },
+    {
+        name: 'Charlene Shiherlis',
+        title: 'Features Editor, Spousal Support in the Service Community',
+        bio: 'Charlene curates profiles and personal essays about the lives and challenges of military and intelligence families. A sharp editor with an eye for domestic intricacies, she is respected by contributors—though sometimes struggles to balance the demands of the newsroom and home.',
+    },
+    {
+        name: 'Eady',
+        title: 'Culture Correspondent, Civilian Impact Desk',
+        bio: 'Eady covers civilian-military relations, focusing on the personal effects of policy and national security on everyday Americans. Drawn into the sector through a relationship with McCauley, she\'s recognized for her humane, accessible reporting on how geopolitics shapes personal destinies.',
+    },
+    {
+        name: 'Justine Hanna',
+        title: 'Staff Writer, Family Affairs & Mental Wellbeing',
+        bio: 'Justine explores the strain and consequences of national security work on family life. Her columns critique structural neglect of mental health resources for defense professionals\' families and are informed by her turbulent marriage to a work-obsessed federal agent.',
+    },
+    {
+        name: 'Donald Breedan',
+        title: 'Junior Fellow, Rehabilitation & Security Futures',
+        bio: 'A once-convicted, now-rehabilitated consultant, Breedan provides lived-experience insights into reentry initiatives for former offenders. His research focuses on the intersection of economic insecurity, recidivism, and homeland defense.',
+    },
+];
+
 export default function TeamPage() {
     return (
-        <div className="darc-mode min-h-screen py-16">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <div className="mb-12 border-l-4 border-darc-red pl-6">
-                    <h1 className="text-5xl font-mono font-bold text-darc-red mb-4 chromatic" data-text="FELLOWS">
-                        FELLOWS
+        <div className="boring-mode min-h-screen py-16">
+            <div className="container mx-auto px-4 max-w-6xl">
+                {/* Header */}
+                <div className="mb-12 border-b-2 border-boring-navy pb-6">
+                    <h1 className="text-4xl font-bold text-boring-navy mb-4">
+                        Our Team
                     </h1>
-                    <div className="flex gap-4 text-xs">
-                        <span className="border border-darc-red text-darc-red px-3 py-1 font-mono">機密</span>
-                        <span className="border border-darc-cyan text-darc-cyan px-3 py-1 font-mono">ANONYMOUS</span>
-                    </div>
+                    <p className="text-boring-gray text-lg">
+                        Meet the analysts and contributors behind DARC
+                    </p>
                 </div>
 
-                <div className="space-y-8 font-mono">
-                    <section className="bg-darc-black bg-opacity-50 border border-darc-red p-8">
-                        <h2 className="text-2xl text-darc-red mb-4 font-bold">
-                            {'>> '} FOR THE STRAIGHTJACKETED
-                        </h2>
-                        <p className="text-darc-green leading-relaxed mb-4">
-                            DARC is for the many current and former thinktankers who are straightjacketed
-                            by the stifling bureaucracy and deep risk aversion endemic among the defense
-                            and foreign policy incumbents, from RAND and CSIS to CFR and Brookings.
-                        </p>
-                        <p className="text-darc-green leading-relaxed mb-4">
-                            We feel that this state of affairs is an unforced error of gigantic proportions.
-                        </p>
-                        <p className="text-darc-green leading-relaxed">
-                            In this critical time, the United States must ensure that the dynamism of its
-                            strategic thinking keeps up with the pace of global change. We must foster a
-                            new generation of defense intellectuals that follow in the best traditions of
-                            Andy Marshall, Herman Kahn, and Edward Luttwak.
-                        </p>
-                    </section>
-
-                    <section className="border-l-4 border-darc-cyan pl-6">
-                        <h2 className="text-2xl text-darc-cyan mb-4 font-bold">
-                            {'>> '} THE OLD GUARD
-                        </h2>
-                        <p className="text-darc-red leading-relaxed mb-4 font-bold">
-                            Instead, a sclerotic establishment continues to pile on its limp, dithering
-                            statecraft in the pages of rags like Foreign Affairs: saying nothing, proposing
-                            nothing, and committing to nothing.
-                        </p>
-                        <p className="text-darc-green leading-relaxed">
-                            DARC seeks to create a coalition of those unwilling to wait for the retirement
-                            party and hearse to bring about change. We believe there would be much progress
-                            in defense thinking if analysts simply did not fear the career impact of saying
-                            what needed to be said.
-                        </p>
-                    </section>
-
-                    <section className="bg-darc-black bg-opacity-50 border border-darc-green p-8">
-                        <h2 className="text-2xl text-darc-green mb-4 font-bold">
-                            {'>> '} PSEUDONYMOUS PUBLICATION
-                        </h2>
-                        <p className="text-darc-green leading-relaxed mb-4">
-                            To that end, DARC has since its inception published an ongoing series of articles
-                            and working papers authored by its Senior Fellows. These papers are published
-                            largely pseudonymously, allowing for a candid expression of real views.
-                        </p>
-                        <p className="text-darc-cyan leading-relaxed mb-4">
-                            In the past, we have covered matters as varying as:
-                        </p>
-                        <ul className="list-disc list-inside space-y-2 text-darc-green ml-4">
-                            <li>The need to revive letters of marque as a solution to modern security issues</li>
-                            <li>The bull case for US action to territorialize Cuba</li>
-                            <li>A proposal to cripple China's AI progress through mass data poisoning</li>
-                            <li>The latent opportunities in weaponizing US control over global energy supply</li>
-                            <li>Shitposting as an active measure and national asset</li>
-                            <li>The GIGACHAD approach to critical minerals governance</li>
-                        </ul>
-                    </section>
-
-                    <section className="border-l-4 border-darc-red pl-6">
-                        <h2 className="text-2xl text-darc-red mb-4 font-bold">
-                            {'>> '} BECOME A FELLOW
-                        </h2>
-                        <p className="text-darc-green leading-relaxed mb-4">
-                            If you would like to publish work through this program and become a DARC Senior
-                            Fellow, please reach out:
-                        </p>
-                        <div className="space-y-3 text-darc-cyan">
-                            <p>
-                                <span className="text-darc-green">DM: </span>
-                                <a
-                                    href="https://x.com/DefenseAnalyses"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-darc-red"
-                                >
-                                    @DefenseAnalyses
-                                </a>
-                            </p>
-                            <p>
-                                <span className="text-darc-green">EMAIL: </span>
-                                <a
-                                    href="mailto:contact@defenseanalyses.org"
-                                    className="hover:text-darc-red"
-                                >
-                                    contact@defenseanalyses.org
-                                </a>
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* Warning Box */}
-                    <div className="mt-12 border-2 border-darc-red p-6 bg-darc-red bg-opacity-5">
-                        <div className="flex items-center gap-4 mb-3">
-                            <span className="text-3xl">⚠️</span>
-                            <h3 className="text-xl font-bold text-darc-red">WARNING</h3>
-                        </div>
-                        <p className="text-darc-green">
-                            All Fellows operate under pseudonyms to protect their careers and enable
-                            candid analysis. Identity verification is handled internally. Anonymity
-                            is guaranteed.
-                        </p>
+                {/* Authors Section */}
+                <section className="mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {authors.map((author, index) => (
+                            <div
+                                key={index}
+                                className={`border rounded-lg p-6 transition-shadow ${
+                                    author.status === 'suspended'
+                                        ? 'border-red-300 bg-gray-50 opacity-75'
+                                        : 'border-boring-lightgray hover:shadow-md'
+                                }`}
+                            >
+                                <div className="flex items-start justify-between mb-3">
+                                    <h3 className={`text-xl font-bold text-boring-navy ${
+                                        author.status === 'suspended' ? 'line-through text-gray-400' : ''
+                                    }`}>
+                                        {author.name}
+                                    </h3>
+                                    {author.status === 'suspended' && (
+                                        <span className="text-xs text-red-600 border border-red-300 px-2 py-1 rounded bg-red-50">
+                                            Suspended
+                                        </span>
+                                    )}
+                                </div>
+                                <p className="text-boring-navy font-semibold text-sm mb-3">
+                                    {author.title}
+                                </p>
+                                <p className={`text-sm leading-relaxed ${
+                                    author.status === 'suspended' ? 'text-gray-500' : 'text-boring-gray'
+                                }`}>
+                                    {author.bio}
+                                </p>
+                            </div>
+                        ))}
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

@@ -10,11 +10,10 @@ export function Navigation() {
 
     const navLinks = [
         { href: '/', label: 'Home' },
-        { href: '/about', label: 'About' },
+        { href: 'https://defenseanalyses.substack.com/', label: 'About', external: true },
         { href: '/research', label: 'Research' },
-        { href: '/publications', label: 'Publications' },
         { href: '/team', label: 'Team' },
-        { href: '/contact', label: 'Contact' },
+        { href: 'https://x.com/DefenseAnalyses', label: 'Contact', external: true },
     ];
 
     if (isDarcMode) {
@@ -30,17 +29,34 @@ export function Navigation() {
                         </Link>
 
                         <div className="flex gap-6 items-center">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`font-mono uppercase text-sm tracking-wider transition-all
-                    ${pathname === link.href ? 'text-darc-red' : 'text-darc-green hover:text-darc-cyan'}
-                  `}
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) => {
+                                if (link.external) {
+                                    return (
+                                        <a
+                                            key={link.href}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`font-mono uppercase text-sm tracking-wider transition-all
+                            ${pathname === link.href ? 'text-darc-red' : 'text-darc-green hover:text-darc-cyan'}
+                          `}
+                                        >
+                                            {link.label}
+                                        </a>
+                                    );
+                                }
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`font-mono uppercase text-sm tracking-wider transition-all
+                        ${pathname === link.href ? 'text-darc-red' : 'text-darc-green hover:text-darc-cyan'}
+                      `}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                );
+                            })}
                             <a
                                 href="https://defenseanalyses.substack.com"
                                 target="_blank"
@@ -69,17 +85,34 @@ export function Navigation() {
                     </Link>
 
                     <div className="flex gap-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`text-white hover:text-boring-lightgray transition-colors text-sm
-                  ${pathname === link.href ? 'border-b-2 border-white' : ''}
-                `}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
+                        {navLinks.map((link) => {
+                            if (link.external) {
+                                return (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`text-white hover:text-boring-lightgray transition-colors text-sm
+                          ${pathname === link.href ? 'border-b-2 border-white' : ''}
+                        `}
+                                    >
+                                        {link.label}
+                                    </a>
+                                );
+                            }
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`text-white hover:text-boring-lightgray transition-colors text-sm
+                      ${pathname === link.href ? 'border-b-2 border-white' : ''}
+                    `}
+                                >
+                                    {link.label}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
