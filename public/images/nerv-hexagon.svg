@@ -1,0 +1,21 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- NERV-style hexagon -->
+  <polygon 
+    points="100,10 175,50 175,150 100,190 25,150 25,50" 
+    fill="none" 
+    stroke="#ff0000" 
+    stroke-width="3"
+  />
+  <polygon 
+    points="100,30 160,60 160,140 100,170 40,140 40,60" 
+    fill="none" 
+    stroke="#00ffff" 
+    stroke-width="2"
+    opacity="0.6"
+  />
+  <!-- Warning stripes -->
+  <line x1="0" y1="95" x2="200" y2="95" stroke="#ff0000" stroke-width="2"/>
+  <line x1="0" y1="105" x2="200" y2="105" stroke="#000000" stroke-width="2"/>
+  <!-- Center -->
+  <circle cx="100" cy="100" r="15" fill="#ff0000" opacity="0.3"/>
+</svg>

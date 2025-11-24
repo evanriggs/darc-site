@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Boring Mode Global Styles */
+.boring-mode {
+  background-color: #ffffff;
+  color: #2d3748;
+  font-family: Arial, sans-serif;
+}
+
+.boring-mode a {
+  color: #1a365d;
+  text-decoration: none;
+}
+
+.boring-mode a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation override - always white */
+nav a {
+  color: white !important;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+
+/* DARC Mode Global Styles */
+.darc-mode {
+  background-color: #0a0a0a;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.darc-mode::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.15) 0px,
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.darc-mode a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.darc-mode a:hover {
+  color: #ff0000;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+/* CRT Phosphor Glow */
+.darc-mode h1,
+.darc-mode h2,
+.darc-mode h3 {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Glitch Effect */
+@keyframes glitch-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(0);
+  }
+
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    clip-path: inset(43% 0 1% 0);
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    clip-path: inset(54% 0 7% 0);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    clip-path: inset(58% 0 43% 0);
+    transform: translate(0);
+  }
+}
+
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-effect:hover::before,
+.glitch-effect:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-effect:hover::before {
+  animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #ff0000;
+  z-index: -1;
+}
+
+.glitch-effect:hover::after {
+  animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #00ffff;
+  z-index: -2;
+}
+
+/* Scanline Animation */
+.scanline {
+  position: relative;
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(255, 0, 0, 0.1) 50%,
+      transparent 100%);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Hexagonal Border */
+.hex-border {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+/* Warning Stripe */
+.warning-stripe {
+  background: repeating-linear-gradient(45deg,
+      #ff0000,
+      #ff0000 10px,
+      #000000 10px,
+      #000000 20px);
+}
+
+/* Chromatic Aberration */
+.chromatic {
+  position: relative;
+}
+
+.chromatic::before,
+.chromatic::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chromatic::before {
+  color: #ff0000;
+  transform: translate(-2px, 0);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+.chromatic::after {
+  color: #00ffff;
+  transform: translate(2px, 0);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+/* Hidden Element (for Easter Egg) */
+#normie-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: -1;
+}
