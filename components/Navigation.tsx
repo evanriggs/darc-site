@@ -10,8 +10,8 @@ export function Navigation() {
 
     const navLinks = [
         { href: '/', label: 'Home' },
-        { href: 'https://defenseanalyses.substack.com/', label: 'About', external: true },
-        { href: '/research', label: 'Research' },
+        { href: 'https://defenseanalyses.substack.com/about', label: 'About', external: true },
+        { href: 'https://defenseanalyses.substack.com/archive', label: 'Research', external: true },
         { href: '/team', label: 'Team' },
         { href: 'https://x.com/DefenseAnalyses', label: 'Contact', external: true },
     ];
