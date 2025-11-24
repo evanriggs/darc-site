@@ -5,7 +5,7 @@ import { useMode } from './ModeProvider';
 import { usePathname } from 'next/navigation';
 
 export function Navigation() {
-    const { isDarcMode } = useMode();
+    const { isDarcMode, toggleDarcMode } = useMode();
     const pathname = usePathname();
 
     const navLinks = [
@@ -65,9 +65,13 @@ export function Navigation() {
                             >
                                 SUBSTACK
                             </a>
-                            <div className="text-xs text-darc-green border border-darc-green px-2 py-1 font-mono">
+                            <button
+                                onClick={toggleDarcMode}
+                                className="text-xs text-darc-green border border-darc-green px-2 py-1 font-mono hover:bg-darc-green hover:text-black transition-all cursor-pointer"
+                                title="Toggle DARC mode"
+                            >
                                 機密
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -113,6 +117,13 @@ export function Navigation() {
                                 </Link>
                             );
                         })}
+                        <button
+                            onClick={toggleDarcMode}
+                            className="text-sm font-semibold text-white hover:text-boring-lightgray transition-colors px-2 py-1 border border-white hover:border-boring-lightgray"
+                            title="Toggle DARC mode"
+                        >
+                            DARC
+                        </button>
                     </div>
                 </div>
             </div>
