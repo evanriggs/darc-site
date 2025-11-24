@@ -29,9 +29,9 @@ const authors: Author[] = [
         bio: 'Cheritto brings a blue-collar pragmatism to his writing, covering infrastructure protection and law enforcement training for homeland defense. A former National Guard sergeant, he is renowned for relatable stories and his advocacy for small-town emergency response reforms—though he\'s also been rumored to take risks to break a story.',
     },
     {
-        name: 'Trejo',
+        name: 'Gilbert Trejo',
         title: 'Contributing Editor, Counter-Cartel Operations',
-        bio: 'Low-key and ultra-reliable, Trejo is the NR team\'s backbone for Latin American organized crime analysis. With years spent undercover with federal agencies, his grounded, detail-oriented intelligence work has busted numerous mythologies about the border. Avoids the limelight but is a trusted source for reporters facing tight deadlines.',
+        bio: 'Low-key and ultra-reliable, Gilbert Trejo is the NR team\'s backbone for Latin American organized crime analysis. With years spent undercover with federal agencies, his grounded, detail-oriented intelligence work has busted numerous mythologies about the border. Avoids the limelight but is a trusted source for reporters facing tight deadlines.',
     },
     {
         name: 'Waingro',
