@@ -1,5 +1,7 @@
 'use client';
 
+import { useMode } from '@/components/ModeProvider';
+
 interface Author {
     name: string;
     title: string;
@@ -42,15 +44,18 @@ const authors: Author[] = [
 ];
 
 export default function TeamPage() {
+    const { isDarcMode } = useMode();
+    
+    // Always render readable design regardless of mode
     return (
-        <div className="min-h-screen bg-white py-16">
+        <div className="min-h-screen bg-white py-16" style={{ backgroundColor: '#ffffff' }}>
             <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
                 <div className="mb-12 border-b-2 border-gray-200 pb-6">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-4" style={{ color: '#111827' }}>
                         Our Team
                     </h1>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-600 text-lg" style={{ color: '#4b5563' }}>
                         Meet the analysts and contributors behind DARC
                     </p>
                 </div>
@@ -66,13 +71,15 @@ export default function TeamPage() {
                                         ? 'border-red-300 bg-red-50 opacity-75'
                                         : 'border-gray-200 hover:border-darc-green hover:shadow-md'
                                 }`}
+                                style={{ backgroundColor: '#ffffff' }}
                             >
                                 <div className="flex items-start justify-between mb-3">
                                     <h3 className={`text-xl font-bold ${
                                         author.status === 'suspended' 
                                             ? 'text-gray-400 line-through' 
                                             : 'text-gray-900'
-                                    }`}>
+                                    }`}
+                                    style={{ color: author.status === 'suspended' ? '#9ca3af' : '#111827' }}>
                                         {author.name}
                                     </h3>
                                     {author.status === 'suspended' && (
@@ -85,14 +92,16 @@ export default function TeamPage() {
                                     author.status === 'suspended' 
                                         ? 'text-red-700 opacity-70' 
                                         : 'text-gray-800'
-                                }`}>
+                                }`}
+                                style={{ color: author.status === 'suspended' ? '#991b1b' : '#1f2937' }}>
                                     {author.title}
                                 </p>
                                 <p className={`text-sm leading-relaxed ${
                                     author.status === 'suspended' 
                                         ? 'text-gray-500' 
                                         : 'text-gray-700'
-                                }`}>
+                                }`}
+                                style={{ color: author.status === 'suspended' ? '#6b7280' : '#374151' }}>
                                     {author.bio}
                                 </p>
                             </div>
